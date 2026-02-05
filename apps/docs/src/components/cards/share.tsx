@@ -23,6 +23,7 @@ import {
   TextFieldInput,
   TextFieldLabel,
 } from "@/registry/ui/text-field"
+import { toast } from "somoto"
 
 const people = [
   {
@@ -43,6 +44,16 @@ const people = [
 ]
 
 const CardsShare = () => {
+  const handleCopy = () => {
+    void navigator.clipboard
+      .writeText("http://example.com/link/to/document")
+      .then(() => {
+        toast.success("Link copied successfully!")
+      })
+      .catch(() => {
+        toast.error("Failed to copy link!")
+      })
+  }
   return (
     <Card>
       <CardHeader>
@@ -59,7 +70,12 @@ const CardsShare = () => {
             class="h-8 w-full"
             readOnly
           />
-          <Button size="sm" variant="outline" class="shadow-none">
+          <Button
+            size="sm"
+            variant="outline"
+            class="shadow-none"
+            onClick={handleCopy}
+          >
             Copy Link
           </Button>
         </TextField>
