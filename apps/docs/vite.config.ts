@@ -46,7 +46,7 @@ export default defineConfig({
     mdx(),
     content(),
     tanstackStart({
-      sitemap: { enabled: true },
+      sitemap: { enabled: true, host: "https://shadcn-solid.pages.dev" },
       prerender: { crawlLinks: true },
     }),
     viteSolid({ ssr: true, extensions: [".mdx"] }),
