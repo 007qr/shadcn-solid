@@ -2,7 +2,6 @@ import {
   Navigate,
   createRouter as createTanStackRouter,
 } from "@tanstack/solid-router"
-
 import { routeTree } from "./routeTree.gen"
 
 export function createRouter() {
@@ -13,6 +12,11 @@ export function createRouter() {
     defaultNotFoundComponent: () => <Navigate to="/" replace />,
     defaultViewTransition: true,
   })
+}
+
+// Required by @tanstack/start-client-core in newer versions
+export function getRouter() {
+  return createRouter()
 }
 
 declare module "@tanstack/solid-router" {
