@@ -26,7 +26,11 @@ function stubBrowserOnlyForSSR(): Plugin {
     },
     load(id) {
       if (id.startsWith("\0stub-browser-only:")) {
-        return "export default {}; export {};"
+        // syntheticNamedExports lets Rollup satisfy any named import
+        // (e.g. VisXYContainer) from the default export without erroring.
+        // All named imports resolve to undefined, which is safe because
+        // chart components are never rendered on the server.
+        return { code: "export default {};", syntheticNamedExports: "default" }
       }
     },
   }
