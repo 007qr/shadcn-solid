@@ -53,6 +53,13 @@ export default defineConfig({
     stubBrowserOnlyForSSR(),
   ],
   resolve: {
-    noExternal: ["@kobalte/core", "cmdk-solid"],
+    noExternal: [
+      "@kobalte/core",
+      "cmdk-solid",
+      "@tanstack/start-server-core",
+      "@tanstack/start-client-core",
+      "@tanstack/solid-start",
+      "@tanstack/solid-router",
+    ],
   },
 })
