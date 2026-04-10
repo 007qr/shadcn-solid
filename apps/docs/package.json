@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "NODE_OPTIONS=--max-old-space-size=4096 vite build",
     "start": "vite start",
     "format": "prettier --write ./src",
     "lint": "eslint --fix ./src",
@@ -11,6 +11,7 @@
     "ci:format": "prettier --check ./src"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.31.2",
     "@mdx-js/rollup": "^3.1.1",
     "@tailwindcss/vite": "^4.1.17",
     "@types/node": "^24.8.1",
@@ -18,14 +19,15 @@
     "tailwindcss": "^4.1.17",
     "vite": "^7.1.7",
     "vite-plugin-solid": "^2.11.10",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.1.4",
+    "wrangler": "^4.81.1"
   },
   "dependencies": {
+    "@cf-wasm/og": "^0.3.7",
     "@solid-primitives/intersection-observer": "^2.2.2",
     "@solid-primitives/media": "^2.3.3",
     "@tanstack/solid-router": "1.130.12",
     "@tanstack/solid-start": "1.130.16",
-    "@vercel/og": "^0.8.5",
     "@vinxi/plugin-mdx": "^3.7.2",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",

@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/*.html",
+    "/*.jsx",
+    "/*.json",
+    "/_headers",
+    "/_redirects",
+    "/sitemap.xml",
+    "/favicon.ico",
+    "/robots.txt",
+    "/og.png",
+    "/site.webmanifest",
+    "/avatars/*",
+    "/examples/*",
+    "/fonts/*",
+    "/images/*",
+    "/android-chrome-192x192.png",
+    "/android-chrome-512x512.png",
+    "/apple-touch-icon.png",
+    "/favicon-16x16.png",
+    "/favicon-32x32.png"
+  ]
+}
