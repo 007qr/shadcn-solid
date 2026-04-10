@@ -7,12 +7,7 @@ import content from "./plugins/content"
 import mdx from "./plugins/mdx"
 
 export default defineConfig({
-  server: {
-    port: 3001,
-  },
-  ssr: {
-    external: ["@unovis/solid", "@unovis/ts"],
-  },
+  server: { port: 3001 },
   plugins: [
     tsConfigPaths({ projects: ["./tsconfig.json"] }),
     tailwindcss(),
@@ -28,5 +23,12 @@ export default defineConfig({
   ],
   resolve: {
     noExternal: ["@kobalte/core", "cmdk-solid"],
+  },
+  environments: {
+    ssr: {
+      resolve: {
+        external: ["@unovis/solid", "@unovis/ts"],
+      },
+    },
   },
 })
